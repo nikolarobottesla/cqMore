@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 # Package meta-data.
 NAME = 'cqmore'
-VERSION = '1.0'
+VERSION = '1.0.1'
 DESCRIPTION = 'cadquery plugin (under construction)'
 URL = 'https://github.com/JustinSDK/cqMore'
 EMAIL = 'caterpillar@openhome.cc'
