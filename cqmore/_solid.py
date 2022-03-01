@@ -4,7 +4,8 @@ from OCP.BRepOffset import BRepOffset_MakeOffset, BRepOffset_Skin # type: ignore
 from OCP.GeomAbs import GeomAbs_Intersection # type: ignore
 
 from cadquery import Workplane, Shape, Edge, Face, Shell, Solid, Wire, Compound, Vector
-from cadquery.cq import T, VectorLike
+from cadquery.cq import CQObject as T
+from cadquery.cq import VectorLike
 
 from ._typing import FaceIndices, MeshGrid
 from ._util import toTuples, toVectors

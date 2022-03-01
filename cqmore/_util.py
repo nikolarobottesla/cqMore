@@ -1,21 +1,21 @@
-from typing import Iterable, cast
+from typing import Iterable, cast, Tuple
 
 from cadquery import Vector
 from cadquery.cq import VectorLike
 
 
-def toVectors(points: Iterable[VectorLike]) -> tuple[Vector]:
+def toVectors(points: Iterable[VectorLike]) -> Tuple[Vector]:
     it = iter(points)
     if isinstance(next(it), Vector):
-        return cast(tuple[Vector], list(points))
+        return cast(Tuple[Vector], list(points))
     
-    return cast(tuple[Vector], tuple(Vector(*p) for p in points))
+    return cast(Tuple[Vector], tuple(Vector(*p) for p in points))
 
 
-def toTuples(points: Iterable[VectorLike]) -> tuple[tuple]:
+def toTuples(points: Iterable[VectorLike]) -> Tuple[tuple]:
     it = iter(points)
     if isinstance(next(it), tuple):
-        return cast(tuple[tuple], tuple(points))
+        return cast(Tuple[tuple], tuple(points))
 
-    r = tuple(v.toTuple() for v in cast(tuple[Vector], points))
-    return cast(tuple[tuple], r)
+    r = tuple(v.toTuple() for v in cast(Tuple[Vector], points))
+    return cast(Tuple[tuple], r)

@@ -1,7 +1,8 @@
 from typing import Iterable, Union, cast
 
 from cadquery import DirectionSelector, Wire, Workplane
-from cadquery.cq import T, VectorLike
+from cadquery.cq import CQObject as T
+from cadquery.cq import VectorLike
 
 from ._util import toTuples, toVectors
 

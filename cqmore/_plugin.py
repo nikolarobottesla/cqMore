@@ -2,7 +2,8 @@ from typing import Iterable, Union, overload
 
 import cadquery
 from cadquery import Wire, Shape, Compound, Solid
-from cadquery.cq import T, VectorLike
+from cadquery.cq import CQObject as T
+from cadquery.cq import VectorLike
 
 from ._typing import FaceIndices, MeshGrid
 from ._solid import makePolyhedron, polylineJoin, splineApproxSurface

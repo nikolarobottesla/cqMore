@@ -11,13 +11,14 @@ to use them.
              )
 
 """
+# from __future__ import annotations
 
 from math import cos, radians, sin, pi, tau
 
-from typing import Iterable, NamedTuple, Union, cast
+from typing import Iterable, NamedTuple, Union, cast, List, Tuple
 
 from cadquery import Vector
-from cadquery.cq import T, VectorLike
+from cadquery.cq import VectorLike
 
 from ._util import toTuples
 from ._typing import MeshGrid, Point3D, FaceIndices
@@ -490,13 +491,13 @@ def gridSurface(points: MeshGrid, thickness: float = 0) -> Polyhedron:
 
     # transpose and creater vectors
     if isinstance(points[0][0], Vector):
-        vectors = cast(tuple[tuple[Vector]],
+        vectors = cast(Tuple[Tuple[Vector]],
             tuple(
                 tuple(points[ci][ri] for ci in range(len(points))) for ri in range(len(points[0]))
             )
         )
     else:
-        vectors = cast(tuple[tuple[Vector]],
+        vectors = cast(Tuple[Tuple[Vector]],
             tuple(
                 tuple(Vector(*points[ci][ri]) for ci in range(len(points))) for ri in range(len(points[0]))
             )
@@ -843,7 +844,7 @@ def polarZonohedra(n: int, theta: float = 35.5) -> Polyhedron:
     return Polyhedron(points, faces)
     
 
-def sweep(profiles: Union[list[list[Point3D]], list[list[Vector]]], closeIdx: int = -1) -> Polyhedron:
+def sweep(profiles: Union[List[List[Point3D]], List[List[Vector]]], closeIdx: int = -1) -> Polyhedron:
     """
     Create a swept polyhedron.
 

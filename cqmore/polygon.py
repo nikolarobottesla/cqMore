@@ -5,7 +5,7 @@ Provide functions for creating simple polygons.
 
 from math import sin, cos, radians, tau
 from typing import Iterable, cast
-from cadquery.cq import T, VectorLike
+from cadquery.cq import VectorLike
 
 from ._typing import Polygon
 from ._util import toTuples

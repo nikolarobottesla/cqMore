@@ -6,13 +6,15 @@ cqMore aims to add more fundamental API to CadQuery. It's based on CadQuery 2.1 
 
 ## Installation
 
-Please use `conda` to install CadQuery and its dependencies (see [Getting started](https://github.com/CadQuery/cadquery#getting-started) of CadQuery). Then, use `conda` to install `git` if you don't have it:
+Please use `conda` to install CadQuery and its dependencies (see [Getting started](https://github.com/CadQuery/cadquery#getting-started) of CadQuery).
+* TLDR `conda install -c conda-forge -c cadquery cadquery=2.1`
 
-	conda install git
 	
 To install cqMore directly from GitHub, run the following `pip` command:
-
-	pip install git+git://github.com/JustinSDK/cqMore.git
+* Install git if you don't already have it `conda install git`
+*  ~~pip install git+git://github.com/JustinSDK/cqMore.git~~
+* SSH: ```python -m pip install git+ssh://git@github.com/nikolarobottesla/cqmore.git```
+* HTTPS: ```python -m pip install https://github.com/nikolarobottesla/cqmore.git```
 
 ## Dependencies
 
